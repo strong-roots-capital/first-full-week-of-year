@@ -1,6 +1,6 @@
 {
   "name": "@strong-roots-capital/first-full-week-of-year",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Find the first week of a given year composed entirely of days in said year",
   "main": "dist/first-full-week-of-year.js",
   "types": "dist/first-full-week-of-year.d.ts",
