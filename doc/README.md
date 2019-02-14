@@ -44,7 +44,7 @@ Many thanks to [moment](https://github.com/moment/moment).
 
 ▸ **firstFullWeekOfYear**(year: *`number`*): `Date`
 
-*Defined in [first-full-week-of-year.ts:17](https://github.com/strong-roots-capital/first-full-week-of-year/blob/2ff8866/src/first-full-week-of-year.ts#L17)*
+*Defined in [first-full-week-of-year.ts:17](https://github.com/strong-roots-capital/first-full-week-of-year/blob/889b906/src/first-full-week-of-year.ts#L17)*
 
 Returns the first week of `year` to be composed entirely of days in said year.
 
