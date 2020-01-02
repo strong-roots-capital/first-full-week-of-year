@@ -11,19 +11,19 @@ function mondayOf(date: Date): Date {
 }
 
 /**
- * Returns the first week of `year` to be composed entirely of days in
- * said year.
+ * Creates a Date object representing the first Monday of the
+ * specified year.
  *
  * Note: this package assumes the first day of the week to be Monday.
  *
- * @param year - The year of which to find the first full-week
+ * @param date - Date specifying year of which to find the first Monday
  * @returns The start of the Monday of the first full week of `year`
  */
 export default function firstFullWeekOfYear(
-    year: number
+    date: Date
 ): Date {
 
-    const firstWeek = mondayOf(D.of({year: year}))
+    const firstWeek = mondayOf(date)
     const nextWeek = D.add('day', 7, firstWeek)
 
     return D.get('year', firstWeek) === D.get('year', nextWeek)

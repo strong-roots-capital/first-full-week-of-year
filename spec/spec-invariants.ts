@@ -1,6 +1,5 @@
 import { testProp, fc } from 'ava-fast-check'
 import { expect } from 'chai'
-import D from 'od'
 
 
 /**
@@ -18,7 +17,7 @@ testProp(
     ],
     (date: Date) => {
 
-        const firstWeekOfYear = firstFullWeekOfYear(D.get('year', date))
+        const firstWeekOfYear = firstFullWeekOfYear(date)
         expect(firstWeekOfYear.getUTCDay()).to.equal(DAY_MONDAY)
     }
 )

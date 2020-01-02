@@ -15,16 +15,16 @@ npm install @strong-roots-capital/first-full-week-of-year
 ``` typescript
 import firstFullWeekOfYear from '@strong-roots-capital/first-full-week-of-year'
 
-console.log(firstFullWeekOfYear(2019))
+console.log(firstFullWeekOfYear(new Date("2019-05-25T00:00:00.000Z")))
 //=>  2019-01-07T00:00:00.000Z
 ```
 
 ## Documentation
 
-<details><summary><code>firstFullWeekOfYear :: number -> Date</code></summary>
+<details><summary><code>firstFullWeekOfYear :: Date -> Date</code></summary>
 
 ``` hs
-firstFullWeekOfYear :: number -> Date
+firstFullWeekOfYear :: Date -> Date
 ```
 
 </details>
