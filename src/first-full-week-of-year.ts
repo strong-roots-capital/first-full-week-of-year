@@ -3,7 +3,12 @@
  * Find the first week of a given year composed entirely of days in said year
  */
 
-import moment from 'moment'
+import D from 'od'
+
+
+function mondayOf(date: Date): Date {
+    return D.add('day', 1, D.startOf('week', date))
+}
 
 /**
  * Returns the first week of `year` to be composed entirely of days in
@@ -14,12 +19,14 @@ import moment from 'moment'
  * @param year - The year of which to find the first full-week
  * @returns The start of the Monday of the first full week of `year`
  */
-export default function firstFullWeekOfYear(year: number): Date {
+export default function firstFullWeekOfYear(
+    year: number
+): Date {
 
-    let firstWeek = moment.utc({year: year}).day('Monday')
-    const nextWeek = firstWeek.clone().add(7, 'days')
-    if (!firstWeek.isSame(nextWeek, 'year')) {
-        firstWeek = nextWeek
-    }
-    return firstWeek.toDate()
+    const firstWeek = mondayOf(D.of({year: year}))
+    const nextWeek = D.add('day', 7, firstWeek)
+
+    return D.get('year', firstWeek) === D.get('year', nextWeek)
+        ? firstWeek
+        : nextWeek
 }

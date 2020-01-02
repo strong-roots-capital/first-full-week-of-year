@@ -2,7 +2,7 @@
 
 > Find the first week of a given year composed entirely of days in said year
 
-Note: this package assumes Monday to be the first day of the week.
+Note: this package assumes _Monday_ to be the first day of the week.
 
 ## Install
 
@@ -19,6 +19,20 @@ console.log(firstFullWeekOfYear(2019))
 //=>  2019-01-07T00:00:00.000Z
 ```
 
+## Documentation
+
+<details><summary><code>firstFullWeekOfYear :: number -> Date</code></summary>
+
+``` hs
+firstFullWeekOfYear :: number -> Date
+```
+
+</details>
+
+Creates a Date object representing the first Monday of the specified
+year.
+
 ## Acknowledgments
 
-Many thanks to [moment](https://github.com/moment/moment).
+- [od](https://github.com/strong-roots-capital/od)
+- [fast-check](https://github.com/dubzzz/fast-check)

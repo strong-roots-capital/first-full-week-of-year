@@ -1,6 +1,5 @@
 import test, { Macro } from 'ava'
-import * as moment from 'moment'
-const fill = require('fill-range')
+import moment from 'moment'
 
 /**
  * Library under test
@@ -8,8 +7,17 @@ const fill = require('fill-range')
 
 import firstFullWeekOfYear from '../src/first-full-week-of-year'
 
-const isFirstFullWeekOfYear: Macro<[Date, number]> = (t: any, start: Date, year: number) => t.deepEqual(start, firstFullWeekOfYear(year))
-isFirstFullWeekOfYear.title = (_ = '', start: Date, year: number) => `${start.toISOString()} should be start of first full week of year ${year}`
+const isFirstFullWeekOfYear: Macro<[Date, number]> = (
+    t: any,
+    start: Date,
+    year: number
+) => t.deepEqual(start, firstFullWeekOfYear(year))
+
+isFirstFullWeekOfYear.title = (
+    _providedTitle = '',
+    start: Date,
+    year: number
+) => `${start.toISOString()} should be start of first full week of year ${year}`
 
 function firstWeek(year: number): Date {
     let firstWeek = moment.utc({year: year}).day('Monday')
@@ -20,6 +28,6 @@ function firstWeek(year: number): Date {
     return firstWeek.toDate()
 }
 
-for (const year of fill(1970, 2020)) {
+for (const year of Array.from({length: 51}).map((_k, i) => i + 1970)) {
     test(isFirstFullWeekOfYear, firstWeek(year), year)
 }
