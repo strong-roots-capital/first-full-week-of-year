@@ -23,7 +23,7 @@ export default function firstFullWeekOfYear(
     date: Date
 ): Date {
 
-    const firstWeek = mondayOf(date)
+    const firstWeek = mondayOf(D.startOf('year', date))
     const nextWeek = D.add('day', 7, firstWeek)
 
     return D.get('year', firstWeek) === D.get('year', nextWeek)

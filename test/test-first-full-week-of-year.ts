@@ -18,7 +18,7 @@ isFirstFullWeekOfYear.title = (
     _providedTitle = '',
     start: Date,
     year: Date
-) => `${start.toISOString()} should be start of first full week of year ${year}`
+) => `${start.toISOString()} should be start of first full week of year ${year.toISOString()}`
 
 function firstWeek(date: Date): Date {
     let firstWeek = moment.utc(date).day('Monday')
