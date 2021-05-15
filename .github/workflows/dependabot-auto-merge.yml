@@ -13,4 +13,4 @@ jobs:
           target: minor
           command: merge
           approve: true
-          github-token: ${{ secrets.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
